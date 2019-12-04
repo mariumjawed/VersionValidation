@@ -1,13 +1,13 @@
 # VersionValidation
 
 ## Integration
+### In Java File
 ```groovy
    //  Integrete FireBase
 ```
-### In Java File
 ```groovy
    
-   package com.tekrevol.validateversion;
+package com.tekrevol.validateversion;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
