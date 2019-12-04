@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Log.d("Build Version Code: ", "missing");
             }
-            /*txtVersionNumber.setText("Build Version: " + info.versionName);*/
         } catch (PackageManager.NameNotFoundException e) {
             Log.d("Build Version: ", "missing");
             e.printStackTrace();
