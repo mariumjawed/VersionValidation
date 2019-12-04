@@ -74,3 +74,46 @@
 
 ```
 
+```groovy
+
+// getting data from database and checking validation
+
+    private void Validation() {
+        referenceUpdate.child(CHILD_ID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                verCode = dataSnapshot.child("versionCode").getValue().toString();
+                verName = dataSnapshot.child("versionName").getValue().toString();
+                // deviceType = dataSnapshot.child("deviceType").getValue().toString();
+                logoutVersion = dataSnapshot.child("logoutVersion").getValue().toString();
+                updateVersion = dataSnapshot.child("updateVersion").getValue().toString();
+                ignoreUpdate = dataSnapshot.child("ignore").getValue().toString();
+                int vCodeFirebase, vCode, logoutV;
+                vCodeFirebase = Integer.parseInt(verCode);
+                vCode = Integer.parseInt(versionCode);
+                logoutV = Integer.parseInt(logoutVersion);
+
+// if "updateVersion is equal to Y" then allow updating new version.
+
+                if (updateVersion.equals("Y")) {
+                    if (vCode < logoutV) {
+                        UpdateForcefully();
+                    } else if (vCodeFirebase > vCode) {
+                        Update();
+                    } else if ((vCodeFirebase < vCode) && (ignoreUpdate.equals("N"))) {
+                        referenceUpdate.child(CHILD_ID).child("versionCode").setValue(versionCode);
+                        referenceUpdate.child(CHILD_ID).child("versionName").setValue(versionName);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+```
+
+
