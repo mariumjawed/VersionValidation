@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String CHILD_ID = "Android";
     private String versionName, versionCode;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference referenceUpdate, reference;
-    Dialog dialog2;
-    String verCode, verName, logoutVersion, updateVersion, ignoreUpdate;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference referenceUpdate, reference;
+    private Dialog dialog2;
+    private String verCode, verName, logoutVersion, updateVersion, ignoreUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
