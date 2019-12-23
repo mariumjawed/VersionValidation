@@ -1,6 +1,6 @@
 # VersionValidation
 
-![Image description]https://github.com/mariumjawed/VersionValidation/blob/master/vc1.PNG
+https://github.com/mariumjawed/VersionValidation/blob/master/vc1.PNG
 
 ## Integration
 ### In Java File
